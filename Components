@@ -1,0 +1,31 @@
+# Inventory Management System Project (Components)
+
+## Features
+
+User Authentication
+- Registration and Login
+- Google OAuth for seamless login
+
+Shop Management
+- Shop Creation
+- Initial Product Limit (3 products)
+
+Subscription-based Offers
+- Monthly Subscriptions
+- Payment through Stripe
+- Increased Product Limit for Subscribers
+
+Product Management
+- Add, Update, Delete Products
+
+Dashboard
+- Total Sales Information
+- Total Profit Details
+- Total Costing Insights
+- Sales Chart by Employee
+- Recently Sold Products
+
+## Technology Used
+- React (JavaScript library for UI)
+- React Router (Declarative routing)
+- SQLite (Database system for structured data storage)
