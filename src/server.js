@@ -12,8 +12,13 @@ app.get("/", function (req, res) {
 });
 
 // Use the apiController for handling product-related routes
-app.use("/products", apiController);
+app.use("/api", apiController);
 
 app.listen(8080, () => {
   console.log("Product Inventory Management System server is running on http://localhost:8080");
 });
+
+// localhost:8080/api/<Rest>
+
+
+// Dashboard -> login -> for any api call -> header -> (username/password or Auth Token)

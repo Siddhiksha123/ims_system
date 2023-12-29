@@ -1,5 +1,6 @@
 // Placeholder for business logic related to production orders
 
+
 class ProductionOrderBL {
     constructor() {
       this.productionOrders = [];
@@ -18,4 +19,8 @@ class ProductionOrderBL {
   }
   
   module.exports = new ProductionOrderBL();
-  
+
+
+  // -> mysql -> id/pass/driver Connect/
+
+  // API -> BL fnction -> SQL QUERY -> manipulate the data -> return

@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const productionOrderBL = require("../businessLogic/productionOrderBL");
 
-router.get("/", (req, res) => {
+router.get("/getAllProductionOrders", (req, res) => {
   // Implement logic to retrieve all production orders
   const productionOrders = productionOrderBL.getAllProductionOrders();
   res.json(productionOrders);
 });
 
-router.post("/", (req, res) => {
+router.post("/addProductionOrder", (req, res) => {
   // Implement logic to create a new production order
   const newProductionOrder = req.body;
 
