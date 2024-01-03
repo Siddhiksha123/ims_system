@@ -1,21 +1,24 @@
-// Placeholder for business logic related to production orders
+// productionOrderBL.js
 
 class ProductionOrderBL {
-    constructor() {
-      this.productionOrders = [];
-    }
-  
-    getAllProductionOrders() {
-      return this.productionOrders;
-    }
-  
-    createProductionOrder(order) {
-      // Add default ingredients "bread" and "peanut butter" if not provided
-      order.ingredients = order.ingredients || ["bread", "peanut butter"];
-  
-      this.productionOrders.push(order);
-    }
+  constructor() {
+    this.productionOrders = [];
   }
-  
-  module.exports = new ProductionOrderBL();
-  
+
+  getAllProductionOrders() {
+    return this.productionOrders;
+  }
+
+  createProductionOrder(order) {
+    // Your logic to create a production order
+    // ...
+    this.productionOrders.push(order);
+  }
+
+  calculatePrice(ingredients) {
+    // Your logic to calculate the price based on ingredients
+    // ...
+  }
+}
+
+module.exports = new ProductionOrderBL();
