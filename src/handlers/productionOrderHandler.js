@@ -2,21 +2,15 @@ const express = require("express");
 const router = express.Router();
 const productionOrderBL = require("../businessLogic/productionOrderBL");
 
-router.get("/", (req, res) => {
-  // Implement logic to retrieve all production orders
-  const productionOrders = productionOrderBL.getAllProductionOrders();
-  res.json(productionOrders);
-});
-
-router.post("/", (req, res) => {
-  // Implement logic to create a new production order
-  const newProductionOrder = req.body;
-
-  // Add "bread" and "peanut butter" to the new production order
-  newProductionOrder.ingredients = ["bread", "peanut butter"];
-
-  productionOrderBL.createProductionOrder(newProductionOrder);
-  res.json({ message: "Production order created successfully", order: newProductionOrder });
+// Get all production orders with price details
+router.get("/production-order", (req, res) => {
+  const allProductionOrders = productionOrderBL.getAllProductionOrders().map(order => {
+    return {
+      ...order,
+      price: productionOrderBL.calculatePrice(order.ingredients),
+    };
+  });
+  res.json(allProductionOrders);
 });
 
 module.exports = router;
