@@ -9,14 +9,16 @@ const cors = require("cors");
 
 // Importing the authentication module
 const dbConnection = require("../Database/Authentication");
+const router= require("../Routes/router");
 
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use(router);
 
 // Updated Homepage route to print "Hello, World!"
 app.get("/HomePage", (req, res) => {
-    res.send("Hellocs, World!");
+    res.send("Hellosddcs, World!");
 });
 
 // API Controller for handling routes
