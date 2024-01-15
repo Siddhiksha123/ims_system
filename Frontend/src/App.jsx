@@ -1,35 +1,89 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleLogin = () => {
+    // Handle login logic here
+    console.log('Login logic:', username, password);
+  };
+
+  const handleSignup = () => {
+    // Handle signup logic here
+    console.log('Signup logic:', username, password);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: '10px', margin: '10px' }}>
+      {isLogin ? (
+        <div>
+          <h1>Login Page</h1>
+          <label>
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={{ padding: '10px', margin: '10px' }}
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ padding: '10px', margin: '10px' }}
+            />
+          </label>
+          <br />
+          <button onClick={handleLogin}>Login</button>
+          <p>
+            Don't have an account?{' '}
+            <span onClick={() => setIsLogin(false)} style={{ cursor: 'pointer', color: 'blue' }}>
+              Sign up here
+            </span>
+          </p>
+        </div>
+      ) : (
+        <div>
+          <h1>Signup Page</h1>
+          <label>
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={{ padding: '10px', margin: '10px' }}
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ padding: '10px', margin: '10px' }}
+            />
+          </label>
+          <br />
+          <button onClick={handleSignup}>Sign up</button>
+          <p>
+            Already have an account?{' '}
+            <span onClick={() => setIsLogin(true)} style={{ cursor: 'pointer', color: 'blue' }}>
+              Login here
+            </span>
+          </p>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
