@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
